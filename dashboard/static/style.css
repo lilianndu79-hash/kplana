@@ -1,0 +1,87 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Microsoft YaHei',sans-serif;background:#0a0e27;color:#e0e0e0;min-height:100vh}
+
+/* Header */
+.header{background:linear-gradient(135deg,#1a1f3e,#2a1a3e);padding:16px 32px;border-bottom:2px solid #e6b422;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.header h1{font-size:22px;color:#e6b422}
+.header select{background:#1a1f3e;color:#e0e0e0;border:1px solid #333;padding:8px 12px;border-radius:4px;font-size:14px;width:220px}
+
+/* Nav */
+.nav{display:flex;gap:4px;background:#111633;padding:0 32px;border-bottom:1px solid #222;overflow-x:auto}
+.nav button{padding:12px 20px;border:none;background:transparent;color:#aaa;cursor:pointer;font-size:14px;border-bottom:2px solid transparent;transition:.2s;white-space:nowrap}
+.nav button:hover{color:#fff}
+.nav button.active{color:#e6b422;border-bottom-color:#e6b422}
+
+/* Panel */
+.panel{padding:24px 32px;max-width:1400px;margin:0 auto}
+.tab{display:none}
+.tab.active{display:block}
+
+/* Card */
+.card{background:#151933;border-radius:8px;padding:20px;margin-bottom:16px;border:1px solid #222}
+.card h3{color:#e6b422;margin-bottom:12px;font-size:15px}
+
+/* Row / Col */
+.row{display:flex;gap:16px;flex-wrap:wrap}
+.col{flex:1;min-width:300px}
+.col-2{flex:2;min-width:400px}
+
+/* Inputs */
+input,select{background:#1a1f3e;color:#e0e0e0;border:1px solid #333;padding:8px 12px;border-radius:4px;width:100%;font-size:14px}
+select{height:40px}
+select[multiple]{height:300px}
+
+/* Buttons */
+.btn{padding:10px 24px;border:none;border-radius:4px;cursor:pointer;font-size:14px;font-weight:bold;transition:.2s}
+.btn-gold{background:#e6b422;color:#0a0e27}
+.btn-gold:hover{background:#f0c040}
+
+/* Result */
+.result{font-size:40px;text-align:center;padding:16px}
+.result .win{color:#4caf50}
+.result .lose{color:#f44336}
+
+/* Bars */
+.bar-row{display:flex;align-items:center;gap:12px;margin:4px 0;font-size:13px}
+.bar-fill{height:18px;border-radius:3px;transition:.3s;min-width:2px}
+.bar-green{background:#4caf50}
+.bar-red{background:#f44336}
+.bar-blue{background:#2196f3}
+.bar-gold{background:#e6b422}
+
+/* Tags */
+.hero-tag{display:inline-block;padding:4px 10px;margin:2px;border-radius:4px;font-size:12px;background:#1a1f3e;border:1px solid #333}
+.hero-tag.a{border-color:#4caf50}
+.hero-tag.b{border-color:#f44336}
+
+/* Table */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#1a1f3e;padding:8px 12px;text-align:left;border-bottom:2px solid #333;color:#e6b422}
+td{padding:8px 12px;border-bottom:1px solid #1a1f3e}
+tr:hover{background:#1a1f3e50}
+
+/* Grid */
+.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+
+/* Charts */
+.chart-box{position:relative;height:320px;width:100%}
+.chart-box.short{height:250px}
+.chart-box canvas{width:100%!important;height:100%!important}
+
+/* Compare */
+.compare-cards{display:grid;grid-template-columns:1fr 80px 1fr;gap:16px;align-items:start}
+
+/* Stats grid */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}
+.stat-item{text-align:center;padding:12px;background:#111633;border-radius:6px}
+.stat-item .val{font-size:24px;font-weight:bold}
+.stat-item .lbl{font-size:11px;color:#888;margin-top:4px}
+
+/* Utilities */
+.small{font-size:11px;color:#888}
+.green{color:#4caf50}
+.red{color:#f44336}
+.gold{color:#e6b422}
+.loading{text-align:center;padding:40px;color:#888}
+.mt-8{margin-top:8px}
+.mb-8{margin-bottom:8px}

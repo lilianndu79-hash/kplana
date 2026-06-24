@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KPL 电竞分析系统</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>KPL 电竞数据分析系统</h1>
+  <select id="leagueSelect" onchange="switchLeague()"></select>
+  <span style="font-size:12px;color:#888">当前赛季</span>
+</div>
+
+<div class="nav">
+  <button class="active" onclick="switchTab('overview')">赛季总览</button>
+  <button onclick="switchTab('bp')">BP 模拟器</button>
+  <button onclick="switchTab('player')">选手分析</button>
+  <button onclick="switchTab('compare')">选手对比</button>
+  <button onclick="switchTab('team')">战队分析</button>
+  <button onclick="switchTab('hero')">英雄分析</button>
+</div>
+
+<div class="panel">
+
+<!-- ============ 赛季总览 ============ -->
+<div id="tab-overview" class="tab active">
+  <div id="overviewContent" class="loading">加载中...</div>
+</div>
+
+<!-- ============ BP 模拟器 ============ -->
+<div id="tab-bp" class="tab">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <h3>蓝方阵容</h3>
+        <select id="teamASelect" style="margin-bottom:8px" onchange="updateBP()"><option value="">选择队伍(可选)</option></select>
+        <div class="grid-5">
+          <div><small>对抗路</small><select class="bp-hero-a" onchange="updateBP()"><option value="">--</option></select></div>
+          <div><small>打野</small><select class="bp-hero-a" onchange="updateBP()"><option value="">--</option></select></div>
+          <div><small>中路</small><select class="bp-hero-a" onchange="updateBP()"><option value="">--</option></select></div>
+          <div><small>发育路</small><select class="bp-hero-a" onchange="updateBP()"><option value="">--</option></select></div>
+          <div><small>游走</small><select class="bp-hero-a" onchange="updateBP()"><option value="">--</option></select></div>
+        </div>
+      </div>
+    </div>
+    <div class="col" style="text-align:center">
+      <div class="card" id="bpResult" style="min-height:200px">
+        <h3>预测结果</h3>
+        <div class="loading">请选择双方阵容</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <h3>红方阵容</h3>
+        <select id="teamBSelect" style="margin-bottom:8px" onchange="updateBP()"><option value="">选择队伍(可选)</option></select>
+        <div class="grid-5">
+          <div><small>对抗路</small><select class="bp-hero-b" onchange="updateBP()"><option value="">--</option></select></div>
+          <div><small>打野</small><select class="bp-hero-b" onchange="updateBP()"><option value="">--</option></select></div>
+          <div><small>中路</small><select class="bp-hero-b" onchange="updateBP()"><option value="">--</option></select></div>
+          <div><small>发育路</small><select class="bp-hero-b" onchange="updateBP()"><option value="">--</option></select></div>
+          <div><small>游走</small><select class="bp-hero-b" onchange="updateBP()"><option value="">--</option></select></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="bpDetail" class="row"></div>
+</div>
+
+<!-- ============ 选手分析 ============ -->
+<div id="tab-player" class="tab">
+  <div class="card">
+    <input type="text" id="playerSearch" placeholder="输入选手名搜索..." oninput="searchPlayer()" style="width:300px"
+           list="playerList" autocomplete="off">
+    <datalist id="playerList"></datalist>
+  </div>
+  <div id="playerContent" class="loading">请输入选手名</div>
+</div>
+
+<!-- ============ 选手对比 (新增) ============ -->
+<div id="tab-compare" class="tab">
+  <div class="card">
+    <div class="row">
+      <div class="col">
+        <input type="text" id="compareP1" placeholder="选手A" oninput="searchCompare()" list="playerList" autocomplete="off">
+      </div>
+      <div class="col">
+        <input type="text" id="compareP2" placeholder="选手B" oninput="searchCompare()" list="playerList" autocomplete="off">
+      </div>
+    </div>
+  </div>
+  <div id="compareContent" class="loading">请输入两个选手名进行对比</div>
+</div>
+
+<!-- ============ 战队分析 ============ -->
+<div id="tab-team" class="tab">
+  <div class="card">
+    <select id="teamSelect" onchange="loadTeam()" style="width:300px"><option value="">选择战队</option></select>
+  </div>
+  <div id="teamContent" class="loading">请选择战队</div>
+</div>
+
+<!-- ============ 英雄分析 ============ -->
+<div id="tab-hero" class="tab">
+  <div class="card">
+    <select id="heroSelect" onchange="loadHero()" style="width:300px"><option value="">选择英雄</option></select>
+  </div>
+  <div id="heroContent" class="loading">请选择英雄</div>
+</div>
+
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
