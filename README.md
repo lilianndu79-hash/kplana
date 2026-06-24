@@ -13,6 +13,26 @@
 | **战队分析** | 队伍统计、队员构成、常用英雄体系、近期战绩 |
 | **英雄分析** | 赛季胜率趋势图、最佳搭档、克制/被克制关系 |
 
+## 功能截图
+
+### 赛季总览
+![赛季总览](screenshots/overview.png)
+
+### BP 模拟器
+![BP模拟器](screenshots/bp.png)
+
+### 选手分析（含雷达图）
+![选手分析](screenshots/player.png)
+
+### 选手对比
+![选手对比](screenshots/compare.png)
+
+### 战队分析
+![战队分析](screenshots/team.png)
+
+### 英雄分析（含赛季趋势图）
+![英雄分析](screenshots/hero.png)
+
 ## 技术架构
 
 ```
